@@ -11,7 +11,7 @@ function App() {
   const [url, setUrl] = useState('');
   const [newUrl,setNewUrl] = useState('');
   const handleSubmit = ()=>{
-    fetch('http://localhost:8000/create',
+    fetch('https://url-shortner26.herokuapp.com/create',
      {
        method: 'POST',
        headers: {
