@@ -11,14 +11,7 @@ function App() {
   const [url, setUrl] = useState('');
   const [newUrl,setNewUrl] = useState('');
 
-  function copyToClipboard(e) {
-    textAreaRef.current.select();
-    document.execCommand('copy');
-    // This is just personal preference.
-    // I prefer to not show the whole text area selected.
-    e.target.focus();
-    setCopySuccess('Copied!');
-  };
+
 
 
 
