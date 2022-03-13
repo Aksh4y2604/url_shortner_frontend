@@ -9,21 +9,18 @@ function App() {
 
 
   const [url, setUrl] = useState('');
+  const [custom, setCustom] = useState('');
   const [newUrl,setNewUrl] = useState('');
 
-
-
-
-
   const handleSubmit = ()=>{
-    fetch('https://url-shortner26.herokuapp.com/create',
-     {
+    fetch('https://url-shortner26.herokuapp.com/create',{
        method: 'POST',
        headers: {
          'Content-Type': 'application/json'
          },
          body: JSON.stringify({
-           url
+           url,
+           custom
        })
       })
       .then(res=>res.json())
@@ -36,27 +33,26 @@ function App() {
 
   return (
     <div className="App">
-      <section class="hero">
-        <div class="hero-body">
-          <p class="title">
+      <section className="hero">
+        <div className="hero-body">
+          <p className="title">
             URL Shortener
           </p>
-          <p class="subtitle">
-            Made with the MERN Stack
-          </p>
+
         </div>
       </section>
-      <div class="columns is-centered mb-6">
+      <div className="columns is-centered mb-6">
         <div className="box column is-three-fifths is-centered">
-          <input class="input is-link mb-4" type="text" value={url} onChange={(e)=>{setUrl(e.target.value)}} placeholder="url"></input>
-          <button class="button is-dark"onClick={handleSubmit}>Submit</button>
+          <input className="input is-link mb-4" type="text" value={url} onChange={(e)=>{setUrl(e.target.value)}} placeholder="Enter the url (including https://)"></input>
+          <input className="input is-link mb-4" type="text" value={custom} onChange={(e)=>{setCustom(e.target.value)}} placeholder="Enter a preferred custom name"></input>
+          <button className="button is-dark"onClick={handleSubmit}>Submit</button>
           <br></br>
           
           
         </div>
 
       </div>
-      <div class="columns is-centered">
+      <div className="columns is-centered">
       <div className="box column is-three-fifths is-centered">
         <DisplayURL newURL={newUrl}></DisplayURL>
       </div>
