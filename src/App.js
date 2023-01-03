@@ -13,7 +13,7 @@ function App() {
   const [newUrl,setNewUrl] = useState('');
 
   const handleSubmit = ()=>{
-    fetch('https://url-shortner26.herokuapp.com/create',{
+    fetch('https://url-shortner-backend-flax.vercel.app/create',{
        method: 'POST',
        headers: {
          'Content-Type': 'application/json'
